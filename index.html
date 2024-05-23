@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="assets/src/style.css" />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      />
+      <title>Formulário</title>
+   </head>
+   <body>
+      <form id="formulario">
+         <h2>Inscreva-se</h2>
+         <div class="campos__inputs">
+            <input
+               type="text"
+               name="nome"
+               placeholder="Nome completo"
+               required
+            />
+            <input type="email" name="email" placeholder="Email" required />
+            <input
+               type="text"
+               name="cpf"
+               pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+               placeholder="CPF"
+               required
+            />
+            <input type="tel" name="telefone" placeholder="Telefone" required />
+            <div class="enderecos">
+               <input
+                  id="inputCEP"
+                  class="cep"
+                  type="text"
+                  name="cep"
+                  placeholder="CEP"
+                  required
+               />
+               <div class="estado__cidade">
+                  <input
+                     type="text"
+                     id="inputEstado"
+                     name="estado"
+                     placeholder="Estado"
+                     required
+                  />
+                  <input
+                     type="text"
+                     id="inputCidade"
+                     name="cidade"
+                     placeholder="Cidade"
+                     required
+                  />
+               </div>
+               <input
+                  id="inputDaRua"
+                  class="inputRua"
+                  type="text"
+                  name="Rua"
+                  placeholder="Rua"
+                  required
+               />
+            </div>
+         </div>
+
+         <div class="campos__documentos">
+            <div class="caixa__documentos">
+               <h2>Documento de Identidade</h2>
+               <div class="docum__elementos">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  <span
+                     >Selecione arquivo ou arraste pra cá <br /><span
+                        >JPG, PNG ou PDF</span
+                     ></span
+                  >
+                  <label class="btn__escolher__arquivo" for="arquivoIdentidade"
+                     >Selecionar</label
+                  >
+                  <input
+                     id="arquivoIdentidade"
+                     type="file"
+                     name="arquivoIdentidade"
+                     accept="application/pdf"
+                  />
+               </div>
+            </div>
+
+            <div class="caixa__documentos">
+               <h2>Documento de Comprovante</h2>
+               <div class="docum__elementos">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  <span
+                     >Selecione arquivo ou arraste pra cá <br /><span
+                        >JPG, PNG ou PDF</span
+                     ></span
+                  >
+                  <label class="btn__escolher__arquivo" for="arquivoComprovante"
+                     >Selecionar</label
+                  >
+                  <input
+                     id="arquivoComprovante"
+                     type="file"
+                     name="arquivoComprovante"
+                     accept="application/pdf"
+                  />
+               </div>
+            </div>
+         </div>
+         <p>*Atenção: Todos os dados acima são obrigatórios</p>
+
+         <div class="btns">
+            <button
+               type="button"
+               class="btn__transparent"
+               onclick="enviarFormulario()"
+            >
+               Cancelar
+            </button>
+            <button type="submit" class="btn__orange">Enviar</button>
+         </div>
+      </form>
+      <script src="assets/js/index.js"></script>
+   </body>
+</html>

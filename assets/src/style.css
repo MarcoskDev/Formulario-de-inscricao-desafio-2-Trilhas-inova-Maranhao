@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+   --font: "Roboto", sans-serif;
+   --background-input: #fffaf2;
+   --border-color: #cacaca;
+   --background-gradient: linear-gradient(
+         -233deg,
+         #420029e1 40%,
+         rgba(5, 5, 5, 0) 65%
+      )
+      no-repeat;
+   --btn-orange: #ff6a0086;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   width: 100%;
+   height: 100vh;
+   background: url(../img/background-são-luiz.jpg) #f37820 center/cover
+      no-repeat;
+   padding: 20px 0 20px 10%;
+
+   display: flex;
+   align-items: center;
+}
+
+body::after {
+   content: "";
+   width: 80vw;
+   min-height: 100vh;
+   position: fixed;
+   top: 0;
+   left: 0;
+   background: var(--background-gradient);
+   z-index: -99999;
+}
+
+form {
+   max-width: 500px;
+   background-color: #ffffff;
+   box-shadow: 0 0 20px #00000098;
+   border-radius: 10px;
+   padding: 30px;
+}
+
+form > h2 {
+   color: #000000;
+   font-size: 2em;
+   font-family: var(--font);
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+form > .campos__inputs {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+.campos__inputs > input,
+.enderecos > input,
+.estado__cidade > input {
+   width: 100%;
+   background-color: var(--background-input);
+   padding: 10px;
+   border: 1px solid var(--border-color);
+   border-radius: 10px;
+}
+
+.enderecos > .inputRua {
+   margin-top: 5px;
+}
+
+input::placeholder {
+   color: #000;
+   font-family: var(--font);
+   font-size: 0.8em;
+   font-weight: 500;
+}
+
+.campos__inputs > .enderecos {
+   width: 100%;
+}
+
+.enderecos > .estado__cidade {
+   padding-top: 5px;
+   display: flex;
+   gap: 5px;
+}
+
+form > .campos__documentos {
+   display: flex;
+   gap: 10px;
+   padding: 35px 0 10px 0;
+}
+
+.caixa__documentos > h2 {
+   font-size: 0.7em;
+   font-family: var(--font);
+   margin-bottom: 10px;
+}
+
+.caixa__documentos > .docum__elementos {
+   border: 1px solid var(--border-color);
+   padding: 10px;
+   border-radius: 10px;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+}
+
+.docum__elementos > i {
+   color: #f37820;
+   font-size: 2em;
+}
+
+.docum__elementos > span {
+   font-size: 0.6em;
+   font-weight: 500;
+   font-family: var(--font);
+}
+
+.docum__elementos > span > span {
+   font-size: 0.8em;
+   font-family: var(--font);
+   color: #00000096;
+}
+
+.docum__elementos > .btn__escolher__arquivo {
+   width: 50%;
+   font-size: 0.6em;
+   font-weight: 500;
+   font-family: var(--font);
+   text-align: center;
+   background-color: transparent;
+   border: 1px solid #0294c0;
+   padding: 5px;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.docum__elementos > input[type="file"] {
+   display: none;
+}
+
+form > p {
+   color: #ff0000;
+   font-size: 0.7em;
+   font-weight: 500;
+   font-family: var(--font);
+}
+
+form > .btns {
+   padding-top: 50px;
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+}
+
+.btns > button {
+   width: 40%;
+   font-family: var(--font);
+   border-radius: 5px;
+   border: 1px solid var(--border-color);
+   padding: 10px;
+}
+
+.btns > button.btn__transparent {
+   color: #f37820;
+   background-color: transparent;
+}
+
+.btns > button.btn__orange {
+   color: #fff;
+   background-color: var(--btn-orange);
+}
+
+@media (max-width: 920px) {
+   body {
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .caixa__documentos > .docum__elementos {
+      padding: 3px;
+      gap: 1;
+   }
+
+   .docum__elementos {
+      width: 100%;
+   }
+}
